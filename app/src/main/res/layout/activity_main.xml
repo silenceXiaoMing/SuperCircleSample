@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:textColor="#506946"
-                android:textSize="80sp" />
+                android:textSize="50dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,6 +63,6 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_margin="10dp"
-        android:src="@drawable/timg"
+        android:src="@drawable/test_loading"
         app:auto_play="true" />
 </LinearLayout>

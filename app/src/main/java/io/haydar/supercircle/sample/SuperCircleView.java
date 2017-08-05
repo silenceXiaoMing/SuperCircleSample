@@ -70,9 +70,9 @@ public class SuperCircleView extends View {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setAntiAlias(true);
         this.setWillNotDraw(false);
-        color[2] = Color.parseColor("#4EDDC4");
-        color[1] = Color.parseColor("#4BCFC9");
-        color[0] = Color.parseColor("#48C2CE");
+        color[0] = Color.parseColor("#4DDBC4");
+        color[2] = Color.parseColor("#4BCFC8");
+        color[1] = Color.parseColor("#48C4CD");
     }
 
 
@@ -118,6 +118,9 @@ public class SuperCircleView extends View {
         Paint ringColorPaint = new Paint(mPaint);
         ringColorPaint.setStyle(Paint.Style.STROKE);
         ringColorPaint.setStrokeWidth(mRingWidth);
+        ringColorPaint.setAntiAlias(true);
+        ringColorPaint.setStrokeJoin(Paint.Join.ROUND);
+        ringColorPaint.setStrokeCap(Paint.Cap.ROUND);
         ringColorPaint.setShader(new SweepGradient(mViewCenterX, mViewCenterX, color, null));
 
         if (!isShowSelect) {

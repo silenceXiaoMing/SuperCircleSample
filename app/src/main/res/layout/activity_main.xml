@@ -22,17 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:min_circle_radio="300"
+            app:ring_normal_color="#F1F3F5"
             app:ring_width="60" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="60dp"
-            android:text="信息完成度"
-            android:textColor="#CFD5DE"
-            android:textSize="18sp" />
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -52,7 +43,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="%"
+                android:text="分"
+                android:layout_gravity="center"
                 android:textSize="28sp" />
         </LinearLayout>
     </FrameLayout>
@@ -66,6 +58,6 @@
         app:min_circle_radio="100"
         app:ring_color_select="4"
         app:ring_width="10"
-        app:select="7" />
+        app:select="72" />
 
 </LinearLayout>

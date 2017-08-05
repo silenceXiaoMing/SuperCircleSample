@@ -36,6 +36,8 @@ public class SuperCircleView extends View {
     private float mRingAngleWidth;  //每一段的角度
 
     private RectF mRectF; //圆环的矩形区域
+    private RectF mRectF1; //圆环描边矩形区域
+
     private int mSelectRing = 0;        //要显示几段彩色
 
     private boolean isShowSelect = false;   //是否显示断
@@ -68,9 +70,9 @@ public class SuperCircleView extends View {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setAntiAlias(true);
         this.setWillNotDraw(false);
-        color[0] = Color.parseColor("#8EE484");
-        color[1] = Color.parseColor("#97C0EF");
-        color[2] = Color.parseColor("#8EE484");
+        color[2] = Color.parseColor("#4EDDC4");
+        color[1] = Color.parseColor("#4BCFC9");
+        color[0] = Color.parseColor("#48C2CE");
     }
 
 
@@ -83,6 +85,8 @@ public class SuperCircleView extends View {
         mViewCenterY = mViewHeight / 2;
         mRectF = new RectF(mViewCenterX - mMinRadio - mRingWidth / 2, mViewCenterY - mMinRadio - mRingWidth / 2, mViewCenterX + mMinRadio + mRingWidth / 2, mViewCenterY + mMinRadio + mRingWidth / 2);
         mRingAngleWidth = (360 - mSelect * mSelectAngle) / mSelect;
+        mRectF1 = new RectF(mViewCenterX - mMinRadio + 10, mViewCenterY - mMinRadio + 10, mViewCenterX + mMinRadio - 10, mViewCenterY + mMinRadio - 10);
+
     }
 
     @Override
@@ -94,16 +98,15 @@ public class SuperCircleView extends View {
         if (isShowSelect && mSelectRing > mSelect) {
             return;
         }
-        mPaint.setColor(mMaxCircleColor);
-        canvas.drawCircle(mViewCenterX, mViewCenterY, mMinRadio + mRingWidth + 20, mPaint);
+
         mPaint.setColor(mMinCircleColor);
         canvas.drawCircle(mViewCenterX, mViewCenterY, mMinRadio, mPaint);
         //画默认圆环
         drawNormalRing(canvas);
+        //画灰色描边圆环
+        drawNormalStrokeRing(canvas);
         //画彩色圆环
         drawColorRing(canvas);
-
-
     }
 
     /**
@@ -147,6 +150,26 @@ public class SuperCircleView extends View {
         ringNormalPaint.setStrokeWidth(mRingWidth);
         ringNormalPaint.setColor(mRingNormalColor);
         canvas.drawArc(mRectF, 270, 360, false, ringNormalPaint);
+        if (!isShowSelect) {
+            return;
+        }
+        ringNormalPaint.setColor(mMaxCircleColor);
+        for (int i = 0; i < mSelect; i++) {
+            canvas.drawArc(mRectF, 270 + (i * mRingAngleWidth + (i) * mSelectAngle), mSelectAngle, false, ringNormalPaint);
+        }
+    }
+
+    /**
+     * 画描边圆环
+     *
+     * @param canvas
+     */
+    private void drawNormalStrokeRing(Canvas canvas) {
+        Paint ringNormalPaint = new Paint(mPaint);
+        ringNormalPaint.setStyle(Paint.Style.STROKE);
+        ringNormalPaint.setStrokeWidth(5);
+        ringNormalPaint.setColor(mRingNormalColor);
+        canvas.drawArc(mRectF1, 270, 360, false, ringNormalPaint);
         if (!isShowSelect) {
             return;
         }

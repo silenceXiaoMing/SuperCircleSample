@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.tv);
         mSuperCircleView = (SuperCircleView) findViewById(R.id.superview);
         mSuperCircleView.setShowSelect(false);
-        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 100);
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 0);
         valueAnimator.setTarget(textView);
         valueAnimator.setDuration(2000);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

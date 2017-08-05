@@ -10,54 +10,59 @@
     android:orientation="vertical"
     tools:context="io.haydar.supercircle.sample.MainActivity">
 
+    <!--<FrameLayout-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:layout_gravity="center">-->
 
-    <FrameLayout
+        <!--<io.haydar.supercircle.sample.SuperCircleView-->
+            <!--android:id="@+id/superview"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--app:min_circle_radio="300"-->
+            <!--app:ring_normal_color="#F1F3F5"-->
+            <!--app:ring_width="60" />-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="0"-->
+                <!--android:textColor="#506946"-->
+                <!--android:textSize="80sp" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="分"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:textSize="28sp" />-->
+        <!--</LinearLayout>-->
+    <!--</FrameLayout>-->
+
+    <!--<io.haydar.supercircle.sample.SuperCircleView-->
+        <!--android:id="@+id/superview2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--app:is_show_select="true"-->
+        <!--app:min_circle_radio="100"-->
+        <!--app:ring_color_select="4"-->
+        <!--app:ring_width="10"-->
+        <!--app:select="72" />-->
+    <io.haydar.supercircle.sample.GifImageView
+        android:layout_gravity="center_horizontal"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_gravity="center">
-
-        <io.haydar.supercircle.sample.SuperCircleView
-            android:id="@+id/superview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:min_circle_radio="300"
-            app:ring_normal_color="#F1F3F5"
-            app:ring_width="60" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textColor="#506946"
-                android:textSize="80sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="分"
-                android:layout_gravity="center"
-                android:textSize="28sp" />
-        </LinearLayout>
-    </FrameLayout>
-
-    <io.haydar.supercircle.sample.SuperCircleView
-        android:id="@+id/superview2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:is_show_select="true"
-        app:min_circle_radio="100"
-        app:ring_color_select="4"
-        app:ring_width="10"
-        app:select="72" />
-
+        android:layout_margin="10dp"
+        android:src="@drawable/timg"
+        app:auto_play="true" />
 </LinearLayout>

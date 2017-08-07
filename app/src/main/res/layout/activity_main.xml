@@ -63,6 +63,6 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_margin="10dp"
-        android:src="@drawable/test_loading"
+        android:src="@drawable/timg"
         app:auto_play="true" />
 </LinearLayout>
